@@ -2,7 +2,7 @@ const express = require('express');
 const axios = require('axios');
 
 const app = express();
-const PORT = 1000;
+// const PORT = 1000;
 
 app.use(express.json()); // Parse JSON requests
 
@@ -487,6 +487,6 @@ app.get('/user-data', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
+app.listen(3000, '0.0.0.0' , () => {
   console.log(`Server is running at http://localhost:${PORT}`);
 });
