@@ -1,0 +1,20 @@
+service: doctor-verification-service
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  verifyDoctor:
+    handler: handler/verifyDoctor.verifyDoctor
+    events:
+      - http:
+          path: verify-doctor
+          method: post
+
+  checkStatus:
+    handler: handler/checkStatus.checkStatus
+    events:
+      - http:
+          path: verify-doctor/{taskId}
+          method: get
